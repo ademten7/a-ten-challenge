@@ -16,15 +16,14 @@ const Data = () => {
   }, []);
 
   //1-Compute the sum of all numbers in the "address" > "values" key.
-
+  const sumOfAllNumbers = data.reduce((previousValue, currenValue) => {
+    return previousValue + currenValue;
+  }, 0);
   //2-Compute the digit sum of the result in step 1.
   const sumOfDigits = () => {
-    const sumOfAllNumbers = data.reduce((previousValue, currenValue) => {
-      return previousValue + currenValue;
-    }, 0);
     let num = sumOfAllNumbers;
     let sum = 0;
-    while (sumOfAllNumbers > 0) {
+    while (num > 0) {
       let rem = num % 10;
       sum = sum + rem;
       num = parseInt(num / 10);
@@ -36,8 +35,10 @@ const Data = () => {
 
   return (
     <div>
-      <h3>Sum of all numbers in the "address" "values" key:</h3>
-      <h3>digit sum of the result </h3>
+      <h3>
+        Sum of all numbers in the "address" "values" key:{sumOfAllNumbers}
+      </h3>
+      <h3>digit sum of the result: {sumOfDigits()} </h3>
     </div>
   );
 };
