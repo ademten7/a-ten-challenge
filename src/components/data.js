@@ -32,14 +32,16 @@ const Data = () => {
     return sum;
   };
 
-  console.log(sumOfDigits());
+  console.log(JSON.stringify({ result: sumOfDigits() }));
 
   return (
     <div>
       <h3>
         Sum of all numbers in the "address" "values" key:{sumOfAllNumbers}
       </h3>
-      <h3>digit sum of the result: {sumOfDigits()} </h3>
+      <h3>
+        digit sum of the result: {JSON.stringify({ result: sumOfDigits() })}{" "}
+      </h3>
     </div>
   );
 };
