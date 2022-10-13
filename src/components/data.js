@@ -28,6 +28,7 @@ const Data = () => {
       sum = sum + rem;
       num = parseInt(num / 10);
     }
+    //3.return result
     return sum;
   };
 
